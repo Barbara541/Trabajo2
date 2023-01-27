@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button>
+        </ion-menu-button>
+      </ion-buttons>
+      <ion-title>Clima </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content color="dark">
+    <ion-card *ngIf="clima" color="dark">
+      <ion-card-header>
+        <p style="color:red">Fecha: {{ fechaCorta.substr(0,10) }} </p>
+        <ion-card-title>{{ clima.name }} {{ clima.sys ? clima.sys.country : null }} </ion-card-title>
+        <ion-card-subtitle><ion-icon name="sunny-outline"></ion-icon> temperatura actual: {{clima.main ? clima.main.temp : null}}</ion-card-subtitle>
+        <br>
+        <i>feels like: {{clima.main ? clima.main.feels_like : null}}</i>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon name="water-outline"></ion-icon> humedad: {{clima.main ? clima.main.humidity : null}}, 
+        <br>
+        <ion-icon name="eye-outline"></ion-icon> visibilidad: {{clima.visibility}} mts, 
+        <br>
+        <ion-icon name="flower-outline"></ion-icon> punto de rocio: {{clima.main ? clima.main.humidity : null}},
+        <br>
+        <ion-icon name="speedometer-outline"></ion-icon>  velocidad del viento {{clima.wind ? clima.wind.speed : null}}
+        <br>
+        <br>
+        <ion-icon style="color:blue" name="analytics-outline"></ion-icon> temperatura min.: {{clima.main ? clima.main.temp_min : null}}
+        <br>
+        <ion-icon style="color: red;" name="analytics-outline"></ion-icon> temperatura max.: {{clima.main ? clima.main.temp_max : null}}
+   </ion-card-content>
+    </ion-card>
+      <ion-card color="dark">
+      <ion-button #boton (click)="createMap()" expand="block">
+        <ion-icon name="map"></ion-icon>
+         mostrar mapa
+      </ion-button>
+
+      <div *ngIf="boton clicked">
+        <capacitor-google-map #map color="dark"></capacitor-google-map>
+      </div>
+    </ion-card>
+  </ion-content>
+  

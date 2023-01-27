@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="dark">
+<br>
+  <label for="" style="margin-left: 41%;">PERFIL</label>
+<ion-list *ngFor="let p of usuario" color="dark" style="color: white;">
+  <ion-item-divider color="dark">
+    <ion-label>
+      Datos personales
+    </ion-label>
+  </ion-item-divider>
+  <ion-item color="dark">
+    <ion-label>Nombre: {{p.nombre}}</ion-label>
+  </ion-item>
+  <ion-item color="dark">
+    <ion-label>Apellido: {{p.apellido}}</ion-label>
+  </ion-item>
+  <ion-item-divider color="dark">
+    <ion-label >
+      MAS DATOS...
+    </ion-label>
+  </ion-item-divider>
+  <ion-item color="dark">
+    <ion-label>Carrera: {{p.estudio}}</ion-label>
+  </ion-item>
+  <ion-item color="dark">
+    <ion-label>Correo: {{p.email}}</ion-label>
+  </ion-item>
+  <ion-item lines="none" color="dark">
+    <ion-label>Telefono: {{p.numero}}</ion-label>
+  </ion-item>
+  <ion-item lines="none" color="dark">
+    <ion-label>Direccion: {{p.direccion}}</ion-label>
+  </ion-item>
+  <ion-item lines="none" color="dark">
+    <ion-label>Estado civil: {{p.estadocivil}}</ion-label>
+  </ion-item>
+
+</ion-list>
+
+</ion-content>

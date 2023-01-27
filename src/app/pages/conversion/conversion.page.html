@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Conversor </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content color="dark">
+  <ion-card color="dark">
+    <ion-card-header>
+      <ion-card-subtitle>Comparar monedas</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Seleccione los tipo de monedas que desea comparar
+    </ion-card-content>
+    
+
+    <ion-item color="dark">
+      <ion-label>tipo moneda</ion-label>
+      <select style="color: black; background-color: white;" #c1 name="" id="country1" (mouseleave)="changebase(c1.value)" placeholder="seleccionar" >
+          <option value="USD">US dolar</option>
+          <option value="EUR">EUR euro</option>
+          <option value="RUB">Rublo ruso</option>
+      </select>
+    </ion-item>
+    <br>
+    <label for="" style="margin-left: 50%;">A</label>
+    <br>
+    <ion-item color="dark">
+      <ion-label>tipo moneda</ion-label>
+      <select style="color: black; background-color: white;" #c2 name=""  id="country1" (mouseleave)="tocountry(c2.value)" placeholder="seleccionar" >
+          <option value="CLP">CLP peso chileno</option>
+      </select>
+    </ion-item>
+
+    <br>
+    <ion-button expand="block" (click)="convert()">Calcular</ion-button>
+  </ion-card>
+
+  <ion-card color="dark">
+    <ion-card-header>
+      <ion-card-title>Conversion</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      1 {{ base }} es igual a {{resultado}} {{ cont2 }}
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="home()" expand="block" color="warning">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+    volver al inicio
+  </ion-button>
+</ion-content>

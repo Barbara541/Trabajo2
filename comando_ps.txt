@@ -1,0 +1,18 @@
+Ejecutar en PowerShell:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+//Comandos para agregar los componentes necesario para trabajar con Google Maps
+npm install @capacitor/google-maps
+ionic build
+npx cap sync
+npm install @types/google.maps
+
+//Comandos para trabajar con Firebase
+npm install -g @angular/cli
+ng add @angular/Firebase
+
+//Comando para trabajar con camarita
+npm install @capacitor/camera
+npx cap sync
+npm install @ionic/pwa-elements
+

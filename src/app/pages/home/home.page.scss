@@ -1,0 +1,15 @@
+.avatar {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.no-avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background: #bababa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
